@@ -1,0 +1,27 @@
+create database test0819;
+use test0819;
+
+CREATE TABLE city(
+    cityId int PRIMARY KEY,
+    cityName varchar(20)
+);
+
+INSERT INTO city VALUES(2,'Taipei'),(4,'Taichung'),(6,'Tainan');
+
+
+CREATE TABLE employee(
+  employeeId int AUTO_INCREMENT PRIMARY KEY,
+  firstName varchar(20),
+  lastName varchar(20),
+  cityId int
+);
+
+INSERT INTO employee (firstName, lastName, cityId) 
+VALUES('mei','Wung',6),('tong','Chung',4),('bia','Lo',2);
+
+
+select firstName, lastName, c.cityId, cityName
+from employee e join city c on e.cityId = c.cityId
+
+
+表單產生器： bootstrapformbuilder.com
